@@ -1,0 +1,19 @@
+[
+  {
+    "reportType": "Daily Game Activity",
+    "totalUsers": 120,
+    "activeUsers": 85,
+    "totalGamesPlayed": 430,
+    "topScamType": "UPI Scam",
+    "generatedBy": "system",
+    "generatedAt": { "$date": "2026-02-10T00:00:00Z" }
+  },
+  {
+    "reportType": "User Performance Summary",
+    "averageScore": 72,
+    "topPerformer": "payal@gmail.com",
+    "weakArea": "Phishing Email Identification",
+    "generatedBy": "admin",
+    "generatedAt": { "$date": "2026-02-10T00:00:00Z" }
+  }
+]

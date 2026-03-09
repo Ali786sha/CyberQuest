@@ -1,0 +1,10 @@
+{
+  "name": "Test User",
+  "email": "test@gmail.com",
+  "password": "hashed_password",
+  "role": "student",
+  "language": "Hindi",
+  "level": 1,
+  "totalScore": 0,
+  "createdAt": { "$date": "2026-02-10T00:00:00Z" }
+}

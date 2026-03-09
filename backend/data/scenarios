@@ -1,0 +1,9 @@
+{
+  "type": "UPI Scam",
+  "difficulty": "Easy",
+  "content": "Aapko ₹500 receive karne ke liye QR scan karna hoga",
+  "correctAnswer": "Scam",
+  "explanation": "UPI me receive ke liye scan nahi karna hota",
+  "language": "Hinglish",
+  "createdAt": { "$date": "2026-02-10T00:00:00Z" }
+}

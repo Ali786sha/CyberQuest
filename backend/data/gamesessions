@@ -1,0 +1,8 @@
+{
+  "userId": "ObjectId('USER_ID')",
+  "scenarioId": "ObjectId('SCENARIO_ID')",
+  "userAnswer": "Scam",
+  "isCorrect": true,
+  "scoreEarned": 10,
+  "playedAt": { "$date": "2026-02-10T00:00:00Z" }
+}

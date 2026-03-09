@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Super Admin",
+    "email": "admin@cyberquest.com",
+    "password": "hashed_admin_password",
+    "role": "superadmin",
+    "createdAt": { "$date": "2026-02-10T00:00:00Z" }
+  },
+  {
+    "name": "Game Admin",
+    "email": "gameadmin@cyberquest.com",
+    "password": "hashed_gameadmin_password",
+    "role": "admin",
+    "createdAt": { "$date": "2026-02-10T00:00:00Z" }
+  }
+]

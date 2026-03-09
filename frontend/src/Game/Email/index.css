@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====================================================
+   MALWARE OUTBREAK – SOC SIMULATOR DESIGN SYSTEM
+   White Corporate Enterprise Theme
+   All colors MUST be HSL.
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    /* Base backgrounds */
+    --background: 0 0% 100%;
+    --foreground: 220 20% 12%;
+
+    /* Surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 12%;
+
+    /* Corporate Primary – Deep Navy Blue */
+    --primary: 221 70% 30%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 221 70% 95%;
+
+    /* Secondary */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 20% 12%;
+
+    /* Muted */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 50%;
+
+    /* Accent */
+    --accent: 220 14% 96%;
+    --accent-foreground: 220 20% 12%;
+
+    /* Danger / Infected */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Corporate custom tokens */
+    --corp-bg: 0 0% 100%;
+    --corp-surface: 220 14% 97%;
+    --corp-border: 220 13% 91%;
+    --corp-text: 220 20% 12%;
+    --corp-muted: 220 9% 50%;
+    --corp-primary: 221 70% 30%;
+    --corp-danger: 0 72% 51%;
+    --corp-success: 142 71% 35%;
+    --corp-warning: 38 92% 50%;
+
+    /* Borders & Inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 221 70% 30%;
+    --radius: 0.5rem;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 220 9% 40%;
+    --sidebar-primary: 221 70% 30%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 220 20% 12%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 221 70% 30%;
+  }
+
+  .dark {
+    --background: 220 20% 8%;
+    --foreground: 220 14% 95%;
+    --card: 220 20% 10%;
+    --card-foreground: 220 14% 95%;
+    --popover: 220 20% 10%;
+    --popover-foreground: 220 14% 95%;
+    --primary: 221 70% 60%;
+    --primary-foreground: 220 20% 8%;
+    --secondary: 220 14% 16%;
+    --secondary-foreground: 220 14% 95%;
+    --muted: 220 14% 16%;
+    --muted-foreground: 220 9% 60%;
+    --accent: 220 14% 16%;
+    --accent-foreground: 220 14% 95%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 14% 20%;
+    --input: 220 14% 20%;
+    --ring: 221 70% 60%;
+    --sidebar-background: 220 20% 6%;
+    --sidebar-foreground: 220 9% 60%;
+    --sidebar-primary: 221 70% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 12%;
+    --sidebar-accent-foreground: 220 14% 95%;
+    --sidebar-border: 220 14% 16%;
+    --sidebar-ring: 221 70% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+}
+
+@layer utilities {
+  .font-corp {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  .bg-corp-bg { background-color: hsl(var(--corp-bg)); }
+  .bg-corp-surface { background-color: hsl(var(--corp-surface)); }
+  .bg-corp-primary { background-color: hsl(var(--corp-primary)); }
+  .bg-corp-danger { background-color: hsl(var(--corp-danger)); }
+  .bg-corp-success { background-color: hsl(var(--corp-success)); }
+  .bg-corp-warning { background-color: hsl(var(--corp-warning)); }
+
+  .text-corp-text { color: hsl(var(--corp-text)); }
+  .text-corp-muted { color: hsl(var(--corp-muted)); }
+  .text-corp-primary { color: hsl(var(--corp-primary)); }
+  .text-corp-danger { color: hsl(var(--corp-danger)); }
+  .text-corp-success { color: hsl(var(--corp-success)); }
+
+  .border-corp-border { border-color: hsl(var(--corp-border)); }
+  .border-corp-primary { border-color: hsl(var(--corp-primary)); }
+  .border-corp-danger { border-color: hsl(var(--corp-danger)); }
+  .border-corp-success { border-color: hsl(var(--corp-success)); }
+}
+
+/* Animations */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink-red {
+  0%, 100% { background-color: hsl(0 72% 98%); border-color: hsl(0 72% 85%); }
+  50% { background-color: hsl(0 72% 94%); border-color: hsl(0 72% 60%); }
+}
+
+@keyframes infection-spread {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out forwards;
+}
+
+.animate-blink-red {
+  animation: blink-red 1.5s ease-in-out infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: hsl(var(--corp-surface)); }
+::-webkit-scrollbar-thumb { background: hsl(var(--corp-border)); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--corp-muted)); }

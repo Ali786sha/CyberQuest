@@ -1,0 +1,11 @@
+{
+    
+  "weakAreas": ["Phishing", "Password Security"],
+  "suggestions": "Practice phishing games daily",
+  "riskLevel": "Medium",
+  "scenarioId": "SCENARIO_OBJECT_ID",
+    "userAnswer": "Scam",
+    "aiResponse": "Sahi decision! UPI me paise receive karne ke liye QR scan nahi hota.",
+    "confidenceScore": 0.92,
+    "createdAt": { "$date": "2026-02-10T00:00:00Z" }
+}

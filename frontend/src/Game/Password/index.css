@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 6%;
+    --foreground: 150 80% 85%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 150 80% 85%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 150 80% 85%;
+
+    --primary: 150 100% 50%;
+    --primary-foreground: 220 20% 6%;
+
+    --secondary: 185 100% 50%;
+    --secondary-foreground: 220 20% 6%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 150 20% 55%;
+
+    --accent: 280 100% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 40% 20%;
+    --input: 220 15% 18%;
+    --ring: 150 100% 50%;
+
+    --radius: 0.75rem;
+
+    --success: 150 100% 50%;
+        --warning: 45 100% 55%;
+    color-scheme: dark;
+    --neon-glow: 0 0 20px hsl(150 100% 50% / 0.4), 0 0 40px hsl(150 100% 50% / 0.2);
+    --cyan-glow: 0 0 20px hsl(185 100% 50% / 0.4), 0 0 40px hsl(185 100% 50% / 0.2);
+
+    --sidebar-background: 220 18% 10%;
+    --sidebar-foreground: 150 80% 85%;
+    --sidebar-primary: 150 100% 50%;
+    --sidebar-primary-foreground: 220 20% 6%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 150 80% 85%;
+    --sidebar-border: 150 40% 20%;
+    --sidebar-ring: 150 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer utilities {
+  .neon-text {
+    text-shadow: 0 0 10px hsl(150 100% 50% / 0.6), 0 0 20px hsl(150 100% 50% / 0.3);
+  }
+
+  .neon-text-cyan {
+    text-shadow: 0 0 10px hsl(185 100% 50% / 0.6), 0 0 20px hsl(185 100% 50% / 0.3);
+  }
+
+  .neon-border {
+    box-shadow: var(--neon-glow);
+  }
+
+  .neon-border-cyan {
+    box-shadow: var(--cyan-glow);
+  }
+
+  .scanline {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(150 100% 50% / 0.03) 2px,
+      hsl(150 100% 50% / 0.03) 4px
+    );
+    pointer-events: none;
+  }
+
+  .terminal-cursor {
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  @keyframes matrix-rain {
+    0% { transform: translateY(-100%); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+  }
+
+  @keyframes decode {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  @keyframes pulse-neon {
+    0%, 100% { box-shadow: var(--neon-glow); }
+    50% { box-shadow: 0 0 30px hsl(150 100% 50% / 0.6), 0 0 60px hsl(150 100% 50% / 0.3); }
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+    20%, 40%, 60%, 80% { transform: translateX(4px); }
+  }
+
+  .animate-shake {
+    animation: shake 0.5s ease-in-out;
+  }
+
+  .animate-pulse-neon {
+    animation: pulse-neon 2s ease-in-out infinite;
+  }
+
+  .animate-decode {
+    animation: decode 0.15s ease-in-out;
+  }
+}

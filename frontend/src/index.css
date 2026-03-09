@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cyber Learning Game Design System - Dark Theme with Neon Accents */
+
+@layer base {
+  :root {
+    /* Cyber Dark Theme Base Colors */
+    --background: 220 20% 6%;
+    --foreground: 0 0% 95%;
+
+    --card: 220 15% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 220 15% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Neon Primary - Electric Cyan */
+    --primary: 180 100% 50%;
+    --primary-foreground: 220 20% 6%;
+
+    /* Neon Secondary - Electric Green */
+    --secondary: 120 100% 50%;
+    --secondary-foreground: 220 20% 6%;
+
+    /* Muted Dark Tones */
+    --muted: 220 15% 12%;
+    --muted-foreground: 0 0% 70%;
+
+    /* Neon Accent - Electric Yellow */
+    --accent: 60 100% 50%;
+    --accent-foreground: 220 20% 6%;
+
+    /* Danger - Neon Red */
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 95%;
+
+    /* UI Elements */
+    --border: 220 15% 15%;
+    --input: 220 15% 10%;
+    --ring: 180 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Cyber Gaming Gradients */
+    --gradient-cyber: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-neon: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-dark: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+
+    /* Cyber Shadows & Glows */
+    --shadow-neon: 0 0 20px hsl(var(--primary) / 0.5);
+    --shadow-neon-hover: 0 0 30px hsl(var(--primary) / 0.8);
+    --shadow-card: 0 8px 32px hsl(220 20% 2% / 0.6);
+
+    /* Sidebar Colors for Cyber Theme */
+    --sidebar-background: 220 18% 7%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 180 100% 50%;
+    --sidebar-primary-foreground: 220 20% 6%;
+    --sidebar-accent: 220 15% 12%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 220 15% 15%;
+    --sidebar-ring: 180 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  /* Cyber Gaming Button Variants */
+  .btn-cyber {
+    @apply bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold px-6 py-3 rounded-lg;
+    @apply hover:shadow-[0_0_20px_hsl(var(--primary)/0.5)] transition-all duration-300;
+    @apply border border-primary/20;
+  }
+
+  .btn-neon {
+    @apply bg-transparent border-2 border-primary text-primary font-semibold px-6 py-3 rounded-lg;
+    @apply hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_20px_hsl(var(--primary)/0.5)];
+    @apply transition-all duration-300;
+  }
+
+  /* Cyber Cards */
+  .card-cyber {
+    @apply bg-card border border-border rounded-xl p-6;
+    @apply shadow-[0_8px_32px_hsl(220_20%_2%/0.6)];
+    @apply hover:border-primary/30 transition-all duration-300;
+  }
+
+  /* Neon Text Effects */
+  .text-neon {
+    @apply text-primary;
+    text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+  }
+
+  .text-glow {
+    @apply text-foreground;
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+
+  /* Cyber Gaming Animations */
+  .pulse-neon {
+    animation: pulse-neon 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes pulse-neon {
+    from {
+      text-shadow: 0 0 10px hsl(var(--primary) / 0.5), 0 0 20px hsl(var(--primary) / 0.3);
+    }
+    to {
+      text-shadow: 0 0 20px hsl(var(--primary) / 0.8), 0 0 30px hsl(var(--primary) / 0.6);
+    }
+  }
+
+  /* Gaming Grid Lines */
+  .grid-lines {
+    background-image: 
+      linear-gradient(rgba(0,255,255,0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,255,0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
